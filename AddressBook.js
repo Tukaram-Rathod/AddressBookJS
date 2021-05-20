@@ -137,16 +137,27 @@ class Contact {
         "\nEmail         : " + this.email;
     }
 }    
-    /* @Description - to create a new address book array and add new contacts  */
-    try {        
-        var addressBook = new Array();
-        console.log("<<<<<Welcome to AddressBook Application>>>>>");
-        addressBook.push(new Contact("Ashish","Rathod","Gangakhed","Parbhani","Maharashtra",431514,8805925703,"Ashu03.mit@gmail.com")); 
-        console.log('contacts before being updated \n');
-        addressBook.forEach((contact) => console.log(contact.toString()));
-        addressBook.filter(contact => contact.firstName == 'Ashish').map(contact => contact.firstName = 'Tukaram');
-        console.log('contacts after being updated \n');
-        addressBook.forEach((contact) => console.log(contact.toString()));
-    }catch (e) {
-        console.log('Regex test is fail \n' + e);
-    }
+   /* @Description - to create a new address book array and add new contacts 
+ * to added new details for contact person using their name and edit it
+ * used to slice method to delete contact by using person name  */
+try {        
+    var addressBook = new Array();
+    console.log("<<<<<Welcome to AddressBook Application>>>>>");
+   
+    addressBook.push(new Contact("Ashish","Rathod","Gangakhed","Parbhani","Maharashtra",431514,8805925703,"Ashu03.mit@gmail.com")); 
+    addressBook.push(new Contact("Sakha","Rathod","Gangakhed","Parbhani","Maharashtra",431514,8788594431,"Sakha2111@gmail.com"));      
+   
+    console.log('contacts before being updated \n');
+    addressBook.forEach((contact) => console.log(contact.toString()));
+   
+    addressBook.filter(contact => contact.firstName == 'Ashish').map(contact => contact.firstName = 'Tukaram');
+    console.log('contacts after being updated \n');
+    addressBook.forEach((contact) => console.log(contact.toString()));
+
+    let index = addressBook.findIndex(contact => Contact.firstName = 'Sakha');
+    addressBook.slice(index,1);
+    console.log("contact after deletted ");
+    addressBook.forEach((contact) => console.log(contact.toString()));
+}catch (e) {
+    console.log('Regex test is fail \n' + e);
+}   
