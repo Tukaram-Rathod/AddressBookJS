@@ -170,6 +170,30 @@ try {
     }
     addressBook.reduce(findNumberOfContacts, 0);
     console.log(' Total number of contacts in array  : ' + count);
+
+    let newContact = new Contact("Bahubali", 'Mahedra', "Chittod", 'Alahabad', 'Up',
+        "450 678", "91 8054564446", "bahu.sep@gmail.com");
+
+
+    function checkDuplicates(count, contact) {
+        if (contact != null)
+            count++;
+        return count;
+    }
+
+    function addContact() {
+        if (countDuplicate == 0) addressBook.push(newContact);
+        else console.log("\nContact not added in the address book. Duplicate Entry found.\n");
+    }
+
+    let countDuplicate = addressBook.filter(contact => contact.firstName == newContact.firstName)
+                                                .map(contact => contact).reduce(checkDuplicates, 0);
+
+    addContact();
+
+    console.log('Checking duplicate while adding new contact in the address book ');
+    addressBook.forEach((contact) => console.log(contact.toString()));
+
     
 }catch (e) {
     console.log('Regex test is fail \n' + e);
