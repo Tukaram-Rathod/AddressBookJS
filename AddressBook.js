@@ -142,7 +142,8 @@ class Contact {
         var addressBook = new Array();
         console.log("<<<<<Welcome to AddressBook Application>>>>>");
         addressBook.push(new Contact("Ashish","Rathod","Gangakhed","Parbhani","Maharashtra",431514,8805925703,"Ashu03.mit@gmail.com")); 
-        addressBook.push(new Contact("Sakha","Rathod","Gangakhed","Parbhani","Maharashtra",431514,8788594431,"Sakha2111@gmail.com"));         
+        addressBook.push(new Contact("Sakha","Rathod","Gangakhed","Parbhani","Maharashtra",431514,8788594431,"Sakha2111@gmail.com")); 
+        addressBook.push(new Contact("Rohit","Sharma","Dadar","Mumbai","Maharashtra",400144,8000000431,"Rohit@Yahoo.com"));        
         addressBook.forEach((contact) => console.log(contact.toString()));
         }
         catch (e) {
