@@ -158,6 +158,19 @@ try {
     addressBook.slice(index,1);
     console.log("contact after deletted ");
     addressBook.forEach((contact) => console.log(contact.toString()));
+
+    /* @Description - declear function and return count value if the codition failed the increase the count
+    * value.
+    * by using reduce method to count the number of contact which is present is array*/
+
+    let count = 0;
+    function findNumberOfContacts(contact) {
+        if (contact != null)
+            return count++;
+    }
+    addressBook.reduce(findNumberOfContacts, 0);
+    console.log(' Total number of contacts in array  : ' + count);
+    
 }catch (e) {
     console.log('Regex test is fail \n' + e);
 }   
